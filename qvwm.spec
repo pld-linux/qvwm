@@ -6,8 +6,13 @@ Release:	1
 License:	LGPL
 Group:		X11/Window Managers
 Source0:	ftp://ftp.qvwm.org/pub/qvwm/%{name}-%{version}.tar.gz
+Patch0:		%{name}-am15.patch
+PAtch1:		%{name}-man_MANS.patch
 URL:		http://www.qvwm.org/
 BuildRequires:	XFree86-devel
+%ifnarch sparc sparcv9 sparc64 alpha
+BuildRequires:	alsa-lib-devel
+%endif
 BuildRequires:	esound-devel >= 0.2.6
 BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libstdc++-devel
@@ -30,13 +35,22 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 
 %prep -q
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-%configure2_13 \
+rm -f missing
+aclocal
+autoconf
+automake -a -c -f
+CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
+%configure \
+%ifnarch sparc sparcv9 sparc64 alpha
+	--without-alsa \
+%endif
 	--enable-rmtcmd \
 	--enable-xsmp \
-	--enable-ss \
-	--without-alsa
+	--enable-ss
 
 %{__make}
 
@@ -57,3 +71,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
+%lang(fr) %{_mandir}/fr/man?/*
+%lang(jp) %{_mandir}/jp/man?/*
