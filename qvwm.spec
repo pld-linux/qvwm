@@ -11,7 +11,7 @@ License:	LGPL
 Group:		X11/Window Managers
 Source0:	ftp://ftp.qvwm.org/pub/qvwm/%{name}-%{version}.tar.gz
 # Source0-md5:	688c44ca560e42315879f5b373d94a38
-Source1:        %{name}-xsession.desktop
+Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-am15.patch
 Patch1:		%{name}-man_MANS.patch
 Patch2:		%{name}-jp2ja.patch
