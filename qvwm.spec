@@ -1,12 +1,11 @@
 Summary:	X11 Window Manager - Windows 95/98 like environment
 Summary(pl):	Mened¿er okienek X11 - ¶rodowisko podobne do Windows 95/98
 Name:		qvwm
-Version:	1.1.11
+Version:	1.1.12
 Release:	1
 License:	LGPL
 Group:		X11/Window Managers
-Source0:	http://www.qvwm.org/archive/qvwm/%{name}-%{version}.tar.gz
-Patch0:		http://www.qvwm.org/archive/qvwm/%{name}-%{version}-20010602.patch.gz
+Source0:	ftp://ftp.qvwm.org/pub/qvwm/%{name}-%{version}.tar.gz
 URL:		http://www.qvwm.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	esound-devel >= 0.2.6
@@ -31,7 +30,6 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 
 %prep -q
 %setup -q
-%patch0 -p1
 
 %build
 %configure2_13 \
