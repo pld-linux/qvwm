@@ -35,7 +35,7 @@ Qvwm jest mened¿erem okienek X11 wygl±daj±cym jak Windows 95/98/NT.
 Pozwala on u¿ytkownikom 95/98/NT na wygodn± pracê w X Window jak i
 u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 
-%prep -q
+%prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
