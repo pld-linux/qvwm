@@ -1,0 +1,103 @@
+diff -auNr qvwm-1.1.12/configure qvwm-1.1.12.final/configure
+--- qvwm-1.1.12/configure	2002-02-18 02:34:53.000000000 +0100
++++ qvwm-1.1.12.final/configure	2003-09-28 05:05:00.000000000 +0200
+@@ -19,7 +19,7 @@
+ ac_help="$ac_help
+   --enable-rmtcmd         allow sending commands to qvwm [yes]"
+ ac_help="$ac_help
+-  --with-man=locale       set locale of installed manual (jp/fr/en) [guessed]"
++  --with-man=locale       set locale of installed manual (ja/fr/en) [guessed]"
+ ac_help="$ac_help
+   --with-imlib            use Imlib library [guessed]"
+ ac_help="$ac_help
+@@ -4373,7 +4373,7 @@
+ case "$MAN_LOCALE" in
+ 	# short iso|long iso|existing broken names|allowed parameter
+ 	ja|ja_*|jJapan*|jJpP)
+-		MANUAL=qvwm.man-jp
++		MANUAL=qvwm.man-ja
+ 	;;
+ 	fr|fr_*|french*|c-french*|fFrR)
+ 		MANUAL=qvwm.man-fr
+diff -auNr qvwm-1.1.12/configure.in qvwm-1.1.12.final/configure.in
+--- qvwm-1.1.12/configure.in	2003-09-28 05:19:19.000000000 +0200
++++ qvwm-1.1.12.final/configure.in	2003-09-28 05:05:12.000000000 +0200
+@@ -239,7 +239,7 @@
+ 	doc/Makefile
+ 	man/Makefile
+ 	man/fr/Makefile
+-	man/jp/Makefile
++	man/ja/Makefile
+ 	rc/Makefile
+ 	rc/system.qvwmrc
+ 	rc/kanji.qvwmrc
+diff -auNr qvwm-1.1.12/doc/Makefile.am qvwm-1.1.12.final/doc/Makefile.am
+--- qvwm-1.1.12/doc/Makefile.am	2000-02-20 08:42:21.000000000 +0100
++++ qvwm-1.1.12.final/doc/Makefile.am	2003-09-28 05:05:33.000000000 +0200
+@@ -1,5 +1,5 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-EXTRA_DIST = BUGS.en BUGS.fr BUGS.jp CHANGES.en CHANGES.jp FAQ.en FAQ.fr \
+-FAQ.jp INSTALL.en INSTALL.fr INSTALL.jp README.en README.fr README.jp \
+-TODO.en TODO.fr TODO.jp COPYING 
++EXTRA_DIST = BUGS.en BUGS.fr BUGS.ja CHANGES.en CHANGES.ja FAQ.en FAQ.fr \
++FAQ.ja INSTALL.en INSTALL.fr INSTALL.ja README.en README.fr README.ja \
++TODO.en TODO.fr TODO.ja COPYING 
+diff -auNr qvwm-1.1.12/doc/Makefile.in qvwm-1.1.12.final/doc/Makefile.in
+--- qvwm-1.1.12/doc/Makefile.in	2002-02-18 03:02:22.000000000 +0100
++++ qvwm-1.1.12.final/doc/Makefile.in	2003-09-28 05:05:42.000000000 +0200
+@@ -80,7 +80,7 @@
+ VERSION = @VERSION@
+ YACC = @YACC@
+ 
+-EXTRA_DIST = BUGS.en BUGS.fr BUGS.jp CHANGES.en CHANGES.jp FAQ.en FAQ.fr FAQ.jp INSTALL.en INSTALL.fr INSTALL.jp README.en README.fr README.jp TODO.en TODO.fr TODO.jp COPYING 
++EXTRA_DIST = BUGS.en BUGS.fr BUGS.ja CHANGES.en CHANGES.ja FAQ.en FAQ.fr FAQ.ja INSTALL.en INSTALL.fr INSTALL.ja README.en README.fr README.ja TODO.en TODO.fr TODO.ja COPYING 
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+diff -auNr qvwm-1.1.12/man/Makefile.am qvwm-1.1.12.final/man/Makefile.am
+--- qvwm-1.1.12/man/Makefile.am	2003-09-28 05:19:19.000000000 +0200
++++ qvwm-1.1.12.final/man/Makefile.am	2003-09-28 05:06:29.000000000 +0200
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS    = fr jp
++SUBDIRS    = fr ja
+ 
+ man_MANS   = qvwm.1
+ 
+diff -auNr qvwm-1.1.12/man/Makefile.in qvwm-1.1.12.final/man/Makefile.in
+--- qvwm-1.1.12/man/Makefile.in	2002-02-18 03:02:22.000000000 +0100
++++ qvwm-1.1.12.final/man/Makefile.in	2003-09-28 05:06:38.000000000 +0200
+@@ -82,7 +82,7 @@
+ 
+ man_MANS = qvwm.1x
+ 
+-EXTRA_DIST = qvwm.man qvwm.man-jp qvwm.man-fr Makefile.std
++EXTRA_DIST = qvwm.man qvwm.man-ja qvwm.man-fr Makefile.std
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+diff -auNr qvwm-1.1.12/man/Makefile.std qvwm-1.1.12.final/man/Makefile.std
+--- qvwm-1.1.12/man/Makefile.std	1999-08-30 04:23:17.000000000 +0200
++++ qvwm-1.1.12.final/man/Makefile.std	2003-09-28 05:06:48.000000000 +0200
+@@ -3,7 +3,7 @@
+ #
+ 
+ MAN = qvwm.man
+-#MAN = qvwm.man-jp
++#MAN = qvwm.man-ja
+ #MAN = qvwm.man-fr
+ 
+ all:
+diff -auNr qvwm-1.1.12/man/jp/Makefile.am qvwm-1.1.12.final/man/jp/Makefile.am
+--- qvwm-1.1.12/man/jp/Makefile.am	2003-09-28 05:19:19.000000000 +0200
++++ qvwm-1.1.12.final/man/jp/Makefile.am	2003-09-28 05:30:09.000000000 +0200
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-mandir     = @mandir@/jp
++mandir     = @mandir@/ja
+ man_MANS   = qvwm.1
+ 
+ EXTRA_DIST = $(man_MANS)
