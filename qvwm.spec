@@ -21,8 +21,6 @@ BuildRequires:	libstdc++-devel
 Requires:	fileutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Qvwm is a Windows 95/98/NT like window manager for X Window System. It
