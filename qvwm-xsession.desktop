@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=qvwm
+TryExec=qvwm
+Name=QVWM
+Comment=A Win95 like window manager
+Comment[nl]=Een Win95-achtige window manager
+Comment[sr]=Win95-олики менаџер прозора
+Comment[sv]=En fönsterhanterare som liknar Windows 95
