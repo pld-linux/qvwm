@@ -1,0 +1,18 @@
+--- qvwm-1.1.12/src/Makefile.am~	Mon May 20 01:00:37 2002
++++ qvwm-1.1.12/src/Makefile.am	Mon May 20 01:00:37 2002
+@@ -55,12 +55,11 @@
+ audiodev_esd.cc audiodev_esd.h audiodev_oss.cc audiodev_oss.h \
+ audiodev_sun.cc audiodev_sun.h
+ 
+-DEFS += -DQVWMDIR=\"@QVWMDIR@\" -DIMGDIR=\"@IMGDIR@\" -DSNDDIR=\"@SNDDIR@\" -DPATH_RM=\"@PATH_RM@\"
+-
+-DEFS += -DHAVE_CONFIG_H -I$(top_builddir)
++DEFS = -DQVWMDIR=\"@QVWMDIR@\" -DIMGDIR=\"@IMGDIR@\" -DSNDDIR=\"@SNDDIR@\" \
++	-DPATH_RM=\"@PATH_RM@\" -DHAVE_CONFIG_H -I$(top_builddir) \
++	-I$(srcdir)
+ 
+ # VPATH is not enough for lexsrc.ll and yaccsrc.yy
+-DEFS += -I$(srcdir)
+ 
+ qvwm_LDADD = @LEXLIB@
+ 
