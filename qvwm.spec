@@ -41,8 +41,8 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 %build
 rm -f missing
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
 %ifnarch sparc sparcv9 sparc64 alpha
