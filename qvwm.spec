@@ -68,9 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/*.en
 %lang(fr) %doc doc/*.fr
-%lang(jp) %doc doc/*.jp
+%lang(ja) %doc doc/*.jp
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
 %lang(fr) %{_mandir}/fr/man?/*
-%lang(ja) %{_mandir}/jp/man?/*
+%lang(ja) %{_mandir}/ja/man?/*
