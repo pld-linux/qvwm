@@ -8,7 +8,7 @@ Group:		X11/Window Managers
 Source0:	ftp://ftp.qvwm.org/pub/qvwm/%{name}-%{version}.tar.gz
 # Source0-md5:	688c44ca560e42315879f5b373d94a38
 Patch0:		%{name}-am15.patch
-PAtch1:		%{name}-man_MANS.patch
+Patch1:		%{name}-man_MANS.patch
 URL:		http://www.qvwm.org/
 BuildRequires:	XFree86-devel
 %ifnarch sparc sparcv9 sparc64 alpha
@@ -21,7 +21,6 @@ BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libstdc++-devel
 Requires:	fileutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Qvwm is a Windows 95/98/NT like window manager for X Window System. It
@@ -43,6 +42,7 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 rm -f missing
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
@@ -67,6 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/*.en
+%lang(fr) %doc doc/*.fr
+%lang(jp) %doc doc/*.jp
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
