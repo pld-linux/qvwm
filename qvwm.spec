@@ -13,6 +13,8 @@ BuildRequires:	XFree86-devel
 %ifnarch sparc sparcv9 sparc64 alpha
 BuildRequires:	alsa-lib-devel
 %endif
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.6
 BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libstdc++-devel
@@ -40,7 +42,7 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
@@ -60,14 +62,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf doc/*.en
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*.gz
+%doc doc/*.en
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
