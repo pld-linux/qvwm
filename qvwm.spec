@@ -9,6 +9,7 @@ Source0:	ftp://ftp.qvwm.org/pub/qvwm/%{name}-%{version}.tar.gz
 # Source0-md5:	688c44ca560e42315879f5b373d94a38
 Patch0:		%{name}-am15.patch
 Patch1:		%{name}-man_MANS.patch
+Patch2:		%%{name}-jp2ja.patch
 URL:		http://www.qvwm.org/
 BuildRequires:	XFree86-devel
 %ifnarch sparc sparcv9 sparc64 alpha
@@ -37,9 +38,14 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
+for a in `find -type f -name "*jp"`
+	do mv $a `echo $a | sed -e 's/jp$/ja/'`
+done
+mv man/jp man/ja
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
