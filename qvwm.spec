@@ -5,10 +5,6 @@ Version:	1.1.11
 Release:	1
 License:	LGPL
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Source0:	http://www.qvwm.org/archive/qvwm/%{name}-%{version}.tar.gz
 Patch0:		http://www.qvwm.org/archive/qvwm/%{name}-%{version}-20010602.patch.gz
 URL:		http://www.qvwm.org/
