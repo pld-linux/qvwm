@@ -41,12 +41,13 @@ u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
 %patch1 -p1
 %patch2 -p1
 
-%build
-rm -f missing
 for a in `find -type f -name "*jp"`
 	do mv $a `echo $a | sed -e 's/jp$/ja/'`
 done
 mv man/jp man/ja
+
+%build
+rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
