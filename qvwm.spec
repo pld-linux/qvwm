@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	alsa	# without ALSA support
+#
 Summary:	X11 Window Manager - Windows 95/98 like environment
 Summary(pl):	Zarz±dca okienek X11 - ¶rodowisko podobne do Windows 95/98
 Name:		qvwm
@@ -13,9 +17,7 @@ Patch1:		%{name}-man_MANS.patch
 Patch2:		%{name}-jp2ja.patch
 URL:		http://www.qvwm.org/
 BuildRequires:	XFree86-devel
-%ifnarch sparc sparcv9 sparc64 alpha
-BuildRequires:	alsa-lib-devel
-%endif
+%{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.6
@@ -54,9 +56,7 @@ rm -f missing
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
-%ifnarch sparc sparcv9 sparc64 alpha
-	--without-alsa \
-%endif
+	%{!?with_alsa:--without-alsa} \
 	--enable-rmtcmd \
 	--enable-xsmp \
 	--enable-ss
