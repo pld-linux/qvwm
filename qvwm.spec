@@ -3,7 +3,7 @@
 %bcond_without	alsa	# without ALSA support
 #
 Summary:	X11 Window Manager - Windows 95/98 like environment
-Summary(pl):	Zarz±dca okienek X11 - ¶rodowisko podobne do Windows 95/98
+Summary(pl.UTF-8):   ZarzÄ…dca okienek X11 - Å›rodowisko podobne do Windows 95/98
 Name:		qvwm
 Version:	1.1.12
 Release:	4
@@ -32,10 +32,10 @@ allows Windows 95/98/NT users to use X Window System without
 hesitation and X Window System users to use Windows 95/98/NT without
 hesitation.
 
-%description -l pl
-Qvwm jest zarz±dc± okienek X11 wygl±daj±cym jak Windows 95/98/NT.
-Pozwala on u¿ytkownikom 95/98/NT na wygodn± pracê w X Window jak i
-u¿ytkownikom X Window na swobodn± pracê w Windows 95/98/NT.
+%description -l pl.UTF-8
+Qvwm jest zarzÄ…dcÄ… okienek X11 wyglÄ…dajÄ…cym jak Windows 95/98/NT.
+Pozwala on uÅ¼ytkownikom 95/98/NT na wygodnÄ… pracÄ™ w X Window jak i
+uÅ¼ytkownikom X Window na swobodnÄ… pracÄ™ w Windows 95/98/NT.
 
 %prep
 %setup -q
