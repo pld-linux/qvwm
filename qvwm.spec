@@ -3,7 +3,7 @@
 %bcond_without	alsa	# without ALSA support
 #
 Summary:	X11 Window Manager - Windows 95/98 like environment
-Summary(pl.UTF-8):   Zarządca okienek X11 - środowisko podobne do Windows 95/98
+Summary(pl.UTF-8):	Zarządca okienek X11 - środowisko podobne do Windows 95/98
 Name:		qvwm
 Version:	1.1.12
 Release:	4
