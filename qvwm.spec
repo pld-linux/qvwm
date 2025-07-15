@@ -39,9 +39,9 @@ użytkownikom X Window na swobodną pracę w Windows 95/98/NT.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 for a in `find -type f -name "*jp"`
 	do mv $a `echo $a | sed -e 's/jp$/ja/'`
